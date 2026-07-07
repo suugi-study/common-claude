@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **Spring Boot 4.1.0 e-commerce application** built with Gradle (Kotlin DSL), using Java 17. The project integrates with Anthropic's Claude AI via Spring AI for intelligent features.
+This is a **Spring Boot 4.1.0 project template** built with Gradle (Kotlin DSL), using Java 17. The project provides a common Claude Code configuration and basic Spring Boot project structure for development.
 
-**Current Status**: Feature development in progress (feature/todo-app branch). Basic domain models (Member, Product) and infrastructure are set up; Order domain implementation planned.
+**Current Status**: Basic domain models (Member, Product) and infrastructure are set up.
 
 ## Technology Stack
 
@@ -16,7 +16,6 @@ This is a **Spring Boot 4.1.0 e-commerce application** built with Gradle (Kotlin
 - **Database**: H2 (in-memory, configured for development)
 - **ORM**: Spring Data JPA
 - **Web**: Spring MVC
-- **AI Integration**: Spring AI 2.0.0 with Anthropic Claude
 - **Code Generation**: Lombok
 - **Testing**: JUnit 5
 - **IDE Support**: IntelliJ IDEA (build.gradle.kts configured for IDE toolchain)
@@ -75,10 +74,8 @@ src/main/java/common/claude/commoncluade/
 │   └── common/                           # Common DTOs and utilities
 ├── member/
 │   └── domain/                           # Member entity and related domain models
-├── product/
-│   └── domain/                           # Product entity and related domain models
-└── order/
-    └── domain/                           # Order entity (planned)
+└── product/
+    └── domain/                           # Product entity and related domain models
 
 src/main/resources/
 ├── application.properties                # Spring configuration
@@ -91,7 +88,7 @@ src/test/java/common/claude/commoncluade/
 ## Architecture Patterns
 
 ### Domain-Driven Design
-- Project is organized by domain (member, product, order)
+- Project is organized by domain (member, product)
 - Each domain contains entity models and business logic
 - Separation of concerns: `domain/` contains JPA entities and core business rules
 
@@ -193,4 +190,3 @@ src/test/java/common/claude/commoncluade/
 - DTO pattern for request/response mapping
 - Spring Security integration for authentication/authorization
 - Actuator endpoints for monitoring
-- Spring AI chat features using Claude API
